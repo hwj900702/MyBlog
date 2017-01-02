@@ -1,0 +1,6 @@
+Blog API is starting on port 3001
+Redis is ready
+Connection successful to: mongodb://localhost/blog
+UnauthorizedError: No Authorization header was found
+::1 - - [Mon, 02 Jan 2017 09:08:56 GMT] "GET /post/all HTTP/1.1" 401 52 "http://localhost/app/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
+::1 - - [Mon, 02 Jan 2017 09:08:57 GMT] "GET /post HTTP/1.1" 304 - "http://localhost/app/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"

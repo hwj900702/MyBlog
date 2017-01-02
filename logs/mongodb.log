@@ -1,0 +1,88 @@
+2017-01-02T15:29:21.460+0800 I CONTROL  [initandlisten] MongoDB starting : pid=535 port=27017 dbpath=./db 64-bit host=huwenjuandeMacBook-Pro.local
+2017-01-02T15:29:21.460+0800 I CONTROL  [initandlisten] db version v3.4.0
+2017-01-02T15:29:21.460+0800 I CONTROL  [initandlisten] git version: f4240c60f005be757399042dc12f6addbc3170c1
+2017-01-02T15:29:21.460+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2j  26 Sep 2016
+2017-01-02T15:29:21.460+0800 I CONTROL  [initandlisten] allocator: system
+2017-01-02T15:29:21.460+0800 I CONTROL  [initandlisten] modules: none
+2017-01-02T15:29:21.460+0800 I CONTROL  [initandlisten] build environment:
+2017-01-02T15:29:21.460+0800 I CONTROL  [initandlisten]     distarch: x86_64
+2017-01-02T15:29:21.460+0800 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-01-02T15:29:21.460+0800 I CONTROL  [initandlisten] options: { storage: { dbPath: "./db" } }
+2017-01-02T15:29:21.460+0800 W -        [initandlisten] Detected unclean shutdown - ./db/mongod.lock is not empty.
+2017-01-02T15:29:21.461+0800 I -        [initandlisten] Detected data files in ./db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2017-01-02T15:29:21.461+0800 W STORAGE  [initandlisten] Recovering data from the last clean checkpoint.
+2017-01-02T15:29:21.461+0800 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=3584M,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2017-01-02T15:29:21.989+0800 I CONTROL  [initandlisten] 
+2017-01-02T15:29:21.989+0800 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2017-01-02T15:29:21.989+0800 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2017-01-02T15:29:21.989+0800 I CONTROL  [initandlisten] 
+2017-01-02T15:29:21.989+0800 I CONTROL  [initandlisten] 
+2017-01-02T15:29:21.989+0800 I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2017-01-02T15:29:22.030+0800 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory './db/diagnostic.data'
+2017-01-02T15:29:22.031+0800 I NETWORK  [thread1] waiting for connections on port 27017
+2017-01-02T15:29:22.287+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:49270 #1 (1 connection now open)
+2017-01-02T15:29:22.294+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:49271 #2 (2 connections now open)
+2017-01-02T15:29:22.295+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:49272 #3 (3 connections now open)
+2017-01-02T15:29:22.295+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:49273 #4 (4 connections now open)
+2017-01-02T15:29:22.296+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:49274 #5 (5 connections now open)
+2017-01-02T15:29:23.026+0800 I FTDC     [ftdc] Unclean full-time diagnostic data capture shutdown detected, found interim file, some metrics may have been lost. OK
+2017-01-02T17:06:06.821+0800 I -        [conn5] end connection 127.0.0.1:49274 (5 connections now open)
+2017-01-02T17:06:06.821+0800 I -        [conn4] end connection 127.0.0.1:49273 (5 connections now open)
+2017-01-02T17:06:06.821+0800 I -        [conn3] end connection 127.0.0.1:49272 (5 connections now open)
+2017-01-02T17:06:06.821+0800 I -        [conn2] end connection 127.0.0.1:49271 (5 connections now open)
+2017-01-02T17:06:06.821+0800 I -        [conn1] end connection 127.0.0.1:49270 (5 connections now open)
+2017-01-02T17:07:16.706+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51045 #6 (1 connection now open)
+2017-01-02T17:07:16.713+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51046 #7 (2 connections now open)
+2017-01-02T17:07:16.714+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51047 #8 (3 connections now open)
+2017-01-02T17:07:16.715+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51048 #9 (4 connections now open)
+2017-01-02T17:07:16.716+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51049 #10 (5 connections now open)
+2017-01-02T17:07:23.514+0800 I -        [conn10] end connection 127.0.0.1:51049 (5 connections now open)
+2017-01-02T17:07:23.514+0800 I -        [conn9] end connection 127.0.0.1:51048 (5 connections now open)
+2017-01-02T17:07:23.514+0800 I -        [conn8] end connection 127.0.0.1:51047 (4 connections now open)
+2017-01-02T17:07:23.514+0800 I -        [conn7] end connection 127.0.0.1:51046 (4 connections now open)
+2017-01-02T17:07:23.514+0800 I -        [conn6] end connection 127.0.0.1:51045 (4 connections now open)
+2017-01-02T17:07:23.829+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51051 #11 (1 connection now open)
+2017-01-02T17:07:23.836+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51052 #12 (2 connections now open)
+2017-01-02T17:07:23.837+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51053 #13 (3 connections now open)
+2017-01-02T17:07:23.838+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51054 #14 (4 connections now open)
+2017-01-02T17:07:23.839+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51055 #15 (5 connections now open)
+2017-01-02T17:07:30.282+0800 I -        [conn15] end connection 127.0.0.1:51055 (5 connections now open)
+2017-01-02T17:07:30.282+0800 I -        [conn14] end connection 127.0.0.1:51054 (5 connections now open)
+2017-01-02T17:07:30.282+0800 I -        [conn13] end connection 127.0.0.1:51053 (4 connections now open)
+2017-01-02T17:07:30.283+0800 I -        [conn12] end connection 127.0.0.1:51052 (4 connections now open)
+2017-01-02T17:07:30.283+0800 I -        [conn11] end connection 127.0.0.1:51051 (4 connections now open)
+2017-01-02T17:07:30.600+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51058 #16 (1 connection now open)
+2017-01-02T17:07:30.607+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51059 #17 (2 connections now open)
+2017-01-02T17:07:30.607+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51060 #18 (3 connections now open)
+2017-01-02T17:07:30.608+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51061 #19 (4 connections now open)
+2017-01-02T17:07:30.609+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51062 #20 (5 connections now open)
+2017-01-02T17:07:35.262+0800 I -        [conn20] end connection 127.0.0.1:51062 (5 connections now open)
+2017-01-02T17:07:35.262+0800 I -        [conn19] end connection 127.0.0.1:51061 (4 connections now open)
+2017-01-02T17:07:35.262+0800 I -        [conn18] end connection 127.0.0.1:51060 (3 connections now open)
+2017-01-02T17:07:35.262+0800 I -        [conn17] end connection 127.0.0.1:51059 (2 connections now open)
+2017-01-02T17:07:35.262+0800 I -        [conn16] end connection 127.0.0.1:51058 (2 connections now open)
+2017-01-02T17:07:35.602+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51065 #21 (1 connection now open)
+2017-01-02T17:07:35.609+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51066 #22 (2 connections now open)
+2017-01-02T17:07:35.610+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51067 #23 (3 connections now open)
+2017-01-02T17:07:35.611+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51068 #24 (4 connections now open)
+2017-01-02T17:07:35.612+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51069 #25 (5 connections now open)
+2017-01-02T17:07:54.981+0800 I -        [conn25] end connection 127.0.0.1:51069 (5 connections now open)
+2017-01-02T17:07:54.981+0800 I -        [conn24] end connection 127.0.0.1:51068 (4 connections now open)
+2017-01-02T17:07:54.981+0800 I -        [conn23] end connection 127.0.0.1:51067 (3 connections now open)
+2017-01-02T17:07:54.981+0800 I -        [conn22] end connection 127.0.0.1:51066 (2 connections now open)
+2017-01-02T17:07:54.981+0800 I -        [conn21] end connection 127.0.0.1:51065 (1 connection now open)
+2017-01-02T17:07:58.623+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51074 #26 (1 connection now open)
+2017-01-02T17:07:58.629+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51075 #27 (2 connections now open)
+2017-01-02T17:07:58.630+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51076 #28 (3 connections now open)
+2017-01-02T17:07:58.631+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51077 #29 (4 connections now open)
+2017-01-02T17:07:58.632+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51078 #30 (5 connections now open)
+2017-01-02T17:08:36.479+0800 I -        [conn30] end connection 127.0.0.1:51078 (5 connections now open)
+2017-01-02T17:08:36.479+0800 I -        [conn29] end connection 127.0.0.1:51077 (5 connections now open)
+2017-01-02T17:08:36.479+0800 I -        [conn28] end connection 127.0.0.1:51076 (4 connections now open)
+2017-01-02T17:08:36.479+0800 I -        [conn27] end connection 127.0.0.1:51075 (4 connections now open)
+2017-01-02T17:08:36.479+0800 I -        [conn26] end connection 127.0.0.1:51074 (4 connections now open)
+2017-01-02T17:08:36.796+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51086 #31 (1 connection now open)
+2017-01-02T17:08:36.803+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51087 #32 (2 connections now open)
+2017-01-02T17:08:36.804+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51088 #33 (3 connections now open)
+2017-01-02T17:08:36.805+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51089 #34 (4 connections now open)
+2017-01-02T17:08:36.806+0800 I NETWORK  [thread1] connection accepted from 127.0.0.1:51090 #35 (5 connections now open)
