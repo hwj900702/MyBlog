@@ -3,5 +3,6 @@
 cd `dirname $0;pwd`
 
 rm -rf /Library/WebServer/Documents/app
+gulp
 cp -r app /Library/WebServer/Documents/app
 ./restart.sh

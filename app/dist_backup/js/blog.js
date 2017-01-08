@@ -141,12 +141,20 @@ appControllers.controller('PostViewCtrl', ['$scope', '$routeParams', '$location'
 
 
 appControllers.controller('AdminPostListCtrl', ['$scope', 'PostService', 
-    function AdminPostListCtrl($scope, PostService) {
-        $scope.posts = [];
-
-        PostService.findAll().success(function(data) {
-            $scope.posts = data;
-        });
+    '$window', function AdminPostListCtrl($scope, PostService, $window) {
+	$scope.posts = [];
+	var isadmin = $window.sessionStorage.isadmin;
+	var username = $window.sessionStorage.username;
+	
+	if (isadmin == 'false') {
+            PostService.findByUsername(username).success(function(data) {
+		$scope.posts = data;
+	    });
+	}else {						   
+            PostService.findAll().success(function(data) {
+		$scope.posts = data;
+            });
+	}
 
         $scope.updatePublishState = function updatePublishState(post, shouldPublish) {
             if (post != undefined && shouldPublish != undefined) {
@@ -188,9 +196,11 @@ appControllers.controller('AdminPostListCtrl', ['$scope', 'PostService',
 ]);
 
 appControllers.controller('AdminPostCreateCtrl', ['$scope', '$location', 'PostService',
-    function AdminPostCreateCtrl($scope, $location, PostService) {
-        $('#textareaContent').wysihtml5({"font-styles": false});
+    '$window', function AdminPostCreateCtrl($scope, $location, PostService, $window) {
+	$('#textareaContent').wysihtml5({"font-styles": false});
 
+	var username = $window.sessionStorage.username;
+	    
         $scope.save = function save(post, shouldPublish) {
             if (post != undefined 
                 && post.title != undefined
@@ -205,7 +215,8 @@ appControllers.controller('AdminPostCreateCtrl', ['$scope', '$location', 'PostSe
                     } else {
                         post.is_published = false;
                     }
-
+		    post.username = username;
+		    
                     PostService.create(post).success(function(data) {
                         $location.path("/admin");
                     }).error(function(status, data) {
@@ -272,6 +283,9 @@ appControllers.controller('AdminUserCtrl', ['$scope', '$location', '$window', 'U
                 UserService.signIn(username, password).success(function(data) {
                     AuthenticationService.isAuthenticated = true;
                     $window.sessionStorage.token = data.token;
+		    $window.sessionStorage.username = username;
+		    $window.sessionStorage.isadmin = data.isadmin;
+		    
                     $location.path("/admin");
                 }).error(function(status, data) {
                     console.log(status);
@@ -286,6 +300,9 @@ appControllers.controller('AdminUserCtrl', ['$scope', '$location', '$window', 'U
                 UserService.logOut().success(function(data) {
                     AuthenticationService.isAuthenticated = false;
                     delete $window.sessionStorage.token;
+		    delete $window.sessionStorage.username;
+		    delete $window.sessionStorage.isadmin;
+		    
                     $location.path("/");
                 }).error(function(status, data) {
                     console.log(status);
@@ -412,6 +429,10 @@ appServices.factory('PostService', function($http) {
         
         findAll: function() {
             return $http.get(options.api.base_url + '/post/all');
+        },
+
+	findByUsername: function(username) {
+            return $http.get(options.api.base_url + '/post/user/' + username);
         },
 
         changePublishState: function(id, newPublishState) {

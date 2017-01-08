@@ -15,7 +15,7 @@ a:hover {
   text-decoration: none;
 }
 .post {
-  background-image: url(../img/blur-bg.jpg);
+  background: #fff;
   border-radius: 3px;
   box-shadow: 0px 1px 1px #aaa;
   padding: 3em;
