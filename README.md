@@ -35,7 +35,9 @@ Run start.sh
 
 Run install.sh
 
+## Restart
 
+Run restart.sh
 
 Open your browser: `http://localhost/app`
 

@@ -6,7 +6,7 @@ var morgan  = require('morgan'); // logger
 var tokenManager = require('./config/token_manager');
 var secret = require('./config/secret');
 
-app.listen(3001);
+app.listen(26);
 app.use(bodyParser());
 app.use(morgan());
 
@@ -18,7 +18,7 @@ routes.rss = require('./route/rss.js');
 
 
 app.all('*', function(req, res, next) {
-  res.set('Access-Control-Allow-Origin', 'http://localhost');
+  res.set('Access-Control-Allow-Origin', '*');
   res.set('Access-Control-Allow-Credentials', true);
   res.set('Access-Control-Allow-Methods', 'GET, POST, DELETE, PUT');
   res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Authorization');
@@ -68,4 +68,4 @@ app.delete('/post/:id', jwt({secret: secret.secretToken}), tokenManager.verifyTo
 //Serve the rss feed
 app.get('/rss', routes.rss.index);
 
-console.log('Blog API is starting on port 3001');
+console.log('Blog API is starting on port 26');

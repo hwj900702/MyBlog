@@ -8,7 +8,7 @@ var appDirectives = angular.module('appDirectives', []);
 
 var options = {};
 options.api = {};
-options.api.base_url = "http://localhost:3001";
+options.api.base_url = "http://ec2-35-167-141-138.us-west-2.compute.amazonaws.com:26";
 
 
 app.config(['$locationProvider', '$routeProvider', 
@@ -74,6 +74,7 @@ app.run(function($rootScope, $location, $window, AuthenticationService) {
         }
     });
 });
+
 appControllers.controller('PostListCtrl', ['$scope', '$sce', 'PostService',
     function PostListCtrl($scope, $sce, PostService) {
 
@@ -187,8 +188,8 @@ appControllers.controller('AdminPostListCtrl', ['$scope', 'PostService',
     }
 ]);
 
-appControllers.controller('AdminPostCreateCtrl', ['$scope', '$location', 'PostService',
-    function AdminPostCreateCtrl($scope, $location, PostService) {
+appControllers.controller('AdminPostCreateCtrl', ['$scope', '$location', '$window', 'PostService',
+    function AdminPostCreateCtrl($scope, $location, $window, PostService) {
         $('#textareaContent').wysihtml5({"font-styles": false});
 
         $scope.save = function save(post, shouldPublish) {
@@ -199,6 +200,8 @@ appControllers.controller('AdminPostCreateCtrl', ['$scope', '$location', 'PostSe
                 var content = $('#textareaContent').val();
                 if (content != undefined) {
                     post.content = content;
+		    console.log($window.sessionStorage.username);
+		    post.username = $window.sessionStorage.username;
 
                     if (shouldPublish != undefined && shouldPublish == true) {
                         post.is_published = true;
@@ -272,6 +275,8 @@ appControllers.controller('AdminUserCtrl', ['$scope', '$location', '$window', 'U
                 UserService.signIn(username, password).success(function(data) {
                     AuthenticationService.isAuthenticated = true;
                     $window.sessionStorage.token = data.token;
+                    $window.sessionStorage.username = username;
+		    console.log('username: ' + username)
                     $location.path("/admin");
                 }).error(function(status, data) {
                     console.log(status);
@@ -286,6 +291,7 @@ appControllers.controller('AdminUserCtrl', ['$scope', '$location', '$window', 'U
                 UserService.logOut().success(function(data) {
                     AuthenticationService.isAuthenticated = false;
                     delete $window.sessionStorage.token;
+                    delete $window.sessionStorage.username;
                     $location.path("/");
                 }).error(function(status, data) {
                     console.log(status);

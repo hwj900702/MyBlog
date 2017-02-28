@@ -8,7 +8,7 @@ var appDirectives = angular.module('appDirectives', []);
 
 var options = {};
 options.api = {};
-options.api.base_url = "http://localhost:3001";
+options.api.base_url = "http://ec2-35-167-141-138.us-west-2.compute.amazonaws.com:26";
 
 
 app.config(['$locationProvider', '$routeProvider', 
